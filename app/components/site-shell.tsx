@@ -84,7 +84,7 @@ export default function SiteShell({ children }: SiteShellProps) {
               ))}
             </nav>
           </div>
-          <p className="footer-credit">Website strategy and build by AI Visibility.</p>
+          <p className="footer-credit">Website build by AI Visibility.</p>
         </div>
       </footer>
     </main>
