@@ -1,34 +1,144 @@
 'use client';
 
-import { FormEvent, useState } from 'react';
+import { FormEvent, useMemo, useState } from 'react';
 import SiteShell from '../components/site-shell';
 
 const bookingEmail = 'admin@astoriaink.co.nz';
 
+const styleOptions = ['Black & grey', 'Blackwork', 'Micro realism', 'Animal tattoo', 'Lettering', 'Not sure yet'];
+const timingOptions = ['As soon as available', 'This month', 'Next 1-2 months', 'Flexible'];
+
+const steps = [
+  {
+    eyebrow: 'Step 01',
+    title: 'Your name',
+    text: 'Start with the basics so Gia knows who the booking is for.',
+  },
+  {
+    eyebrow: 'Step 02',
+    title: 'Style',
+    text: 'Choose the direction that best matches your tattoo idea.',
+  },
+  {
+    eyebrow: 'Step 03',
+    title: 'Placement',
+    text: 'Add where it will go and roughly how large you want it.',
+  },
+  {
+    eyebrow: 'Step 04',
+    title: 'Tattoo idea',
+    text: 'Describe the subject, mood, details, and anything important to avoid.',
+  },
+  {
+    eyebrow: 'Step 05',
+    title: 'Reference images',
+    text: 'Select the images you want Gia to review. You will attach them when the email opens.',
+  },
+  {
+    eyebrow: 'Step 06',
+    title: 'Timing',
+    text: 'Choose when you would ideally like to book.',
+  },
+  {
+    eyebrow: 'Final step',
+    title: 'Your email',
+    text: 'Finish with your email and send the booking request to Astoria Ink.',
+  },
+];
+
+type BookingData = {
+  name: string;
+  style: string;
+  placement: string;
+  size: string;
+  idea: string;
+  references: string;
+  imageNames: string[];
+  timing: string;
+  email: string;
+};
+
+const initialData: BookingData = {
+  name: '',
+  style: '',
+  placement: '',
+  size: '',
+  idea: '',
+  references: '',
+  imageNames: [],
+  timing: '',
+  email: '',
+};
+
 export default function BookNowPage() {
+  const [stepIndex, setStepIndex] = useState(0);
+  const [data, setData] = useState<BookingData>(initialData);
   const [status, setStatus] = useState('');
+
+  const step = steps[stepIndex];
+  const progress = Math.round(((stepIndex + 1) / steps.length) * 100);
+
+  const canContinue = useMemo(() => {
+    switch (stepIndex) {
+      case 0:
+        return data.name.trim().length > 1;
+      case 1:
+        return Boolean(data.style);
+      case 2:
+        return Boolean(data.placement.trim() && data.size.trim());
+      case 3:
+        return data.idea.trim().length > 8;
+      case 4:
+        return data.imageNames.length > 0;
+      case 5:
+        return Boolean(data.timing);
+      case 6:
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email);
+      default:
+        return false;
+    }
+  }, [data, stepIndex]);
+
+  const updateField = (field: keyof BookingData, value: string) => {
+    setData((current) => ({ ...current, [field]: value }));
+  };
+
+  const goNext = () => {
+    if (!canContinue) return;
+    setStepIndex((current) => Math.min(current + 1, steps.length - 1));
+  };
+
+  const goBack = () => {
+    setStepIndex((current) => Math.max(current - 1, 0));
+  };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const data = new FormData(event.currentTarget);
-    const name = String(data.get('name') || '');
+    if (stepIndex < steps.length - 1) {
+      goNext();
+      return;
+    }
+
+    if (!canContinue) return;
+
     const request = [
       'Gia tattoo booking',
-      `Name: ${name}`,
-      `Email: ${data.get('email')}`,
-      `Placement: ${data.get('placement')}`,
-      `Approx size: ${data.get('size')}`,
-      `Style: ${data.get('style')}`,
-      `Timing: ${data.get('timing')}`,
-      `Idea: ${data.get('idea')}`,
-      `References: ${data.get('references') || 'Reference images to be attached'}`,
+      `Name: ${data.name}`,
+      `Email: ${data.email}`,
+      `Style: ${data.style}`,
+      `Placement: ${data.placement}`,
+      `Approx size: ${data.size}`,
+      `Idea: ${data.idea}`,
+      `Reference notes: ${data.references || 'No extra notes'}`,
+      `Reference images selected: ${data.imageNames.join(', ')}`,
+      `Timing: ${data.timing}`,
     ].join('\n');
 
-    const subject = encodeURIComponent(`Gia tattoo booking${name ? ` - ${name}` : ''}`);
-    const body = encodeURIComponent(`${request}\n\nPlease attach any reference images before sending.`);
+    const subject = encodeURIComponent(`Gia tattoo booking - ${data.name}`);
+    const body = encodeURIComponent(`${request}\n\nPlease attach the selected reference images before sending.`);
 
-    setStatus('Opening your email app with the tattoo booking request filled in.');
+    setStatus('Opening your email app. Attach the selected reference images before sending.');
     window.location.href = `mailto:${bookingEmail}?subject=${subject}&body=${body}`;
   };
 
@@ -40,92 +150,187 @@ export default function BookNowPage() {
             <span className="eyebrow">Book tattoo</span>
             <h1>Book a tattoo with Gia.</h1>
             <p>
-              Fill out the tattoo booking form and it will open as an email to Astoria Ink.
-              Attach reference images before sending.
+              A quick booking flow for your idea, placement, style, references, and contact details.
+              It opens as an email to Astoria Ink so you can attach your images before sending.
             </p>
+            <a
+              href="https://www.astoriaink.co.nz/"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="studio-backlink"
+            >
+              Astoria Ink Christchurch tattoo studio
+            </a>
           </div>
 
-          <form className="booking-form" onSubmit={handleSubmit}>
-            <div className="form-grid">
-              <label className="field">
-                <span>Name</span>
-                <input name="name" type="text" autoComplete="name" required />
-              </label>
-              <label className="field">
-                <span>Email</span>
-                <input name="email" type="email" autoComplete="email" required />
-              </label>
+          <form className="booking-form booking-funnel" onSubmit={handleSubmit}>
+            <div className="funnel-head">
+              <div>
+                <span className="eyebrow">{step.eyebrow}</span>
+                <h2>{step.title}</h2>
+                <p>{step.text}</p>
+              </div>
+              <span className="progress-count">{stepIndex + 1}/{steps.length}</span>
             </div>
 
-            <div className="form-grid">
-              <label className="field">
-                <span>Placement</span>
-                <input name="placement" type="text" placeholder="Forearm, ribs, ankle..." required />
-              </label>
-              <label className="field">
-                <span>Approx size</span>
-                <input name="size" type="text" placeholder="5cm, palm size, half sleeve..." required />
-              </label>
+            <div className="progress-track" aria-label={`Booking progress ${progress}%`}>
+              <span style={{ width: `${progress}%` }} />
             </div>
 
-            <div className="form-grid">
-              <label className="field">
-                <span>Style</span>
-                <select name="style" required defaultValue="">
-                  <option value="" disabled>
-                    Select a style
-                  </option>
-                  <option>Blackwork</option>
-                  <option>Micro realism</option>
-                  <option>Black & grey</option>
-                  <option>Lettering</option>
-                  <option>Not sure yet</option>
-                </select>
-              </label>
-              <label className="field">
-                <span>Timing</span>
-                <select name="timing" required defaultValue="">
-                  <option value="" disabled>
-                    Select timing
-                  </option>
-                  <option>As soon as available</option>
-                  <option>This month</option>
-                  <option>Next 1-2 months</option>
-                  <option>Flexible</option>
-                </select>
-              </label>
+            <div className="funnel-step">
+              {stepIndex === 0 ? (
+                <label className="field">
+                  <span>Name</span>
+                  <input
+                    name="name"
+                    type="text"
+                    autoComplete="name"
+                    value={data.name}
+                    onChange={(event) => updateField('name', event.target.value)}
+                    placeholder="Your name"
+                    required
+                  />
+                </label>
+              ) : null}
+
+              {stepIndex === 1 ? (
+                <div className="choice-group" aria-label="Choose tattoo style">
+                  {styleOptions.map((option) => (
+                    <button
+                      key={option}
+                      type="button"
+                      className={`choice-button ${data.style === option ? 'is-selected' : ''}`}
+                      onClick={() => updateField('style', option)}
+                    >
+                      {option}
+                    </button>
+                  ))}
+                </div>
+              ) : null}
+
+              {stepIndex === 2 ? (
+                <div className="form-grid">
+                  <label className="field">
+                    <span>Placement</span>
+                    <input
+                      name="placement"
+                      type="text"
+                      value={data.placement}
+                      onChange={(event) => updateField('placement', event.target.value)}
+                      placeholder="Forearm, ribs, ankle..."
+                      required
+                    />
+                  </label>
+                  <label className="field">
+                    <span>Approx size</span>
+                    <input
+                      name="size"
+                      type="text"
+                      value={data.size}
+                      onChange={(event) => updateField('size', event.target.value)}
+                      placeholder="5cm, palm size, half sleeve..."
+                      required
+                    />
+                  </label>
+                </div>
+              ) : null}
+
+              {stepIndex === 3 ? (
+                <label className="field">
+                  <span>Tattoo idea</span>
+                  <textarea
+                    name="idea"
+                    value={data.idea}
+                    onChange={(event) => updateField('idea', event.target.value)}
+                    placeholder="Describe the subject, mood, details, meaning, and anything you want avoided."
+                    required
+                  />
+                </label>
+              ) : null}
+
+              {stepIndex === 4 ? (
+                <div className="reference-step">
+                  <label className="upload-field">
+                    <span>Choose reference images</span>
+                    <input
+                      name="images"
+                      type="file"
+                      accept="image/*"
+                      multiple
+                      required
+                      onChange={(event) => {
+                        const names = Array.from(event.target.files ?? []).map((file) => file.name);
+                        setData((current) => ({ ...current, imageNames: names }));
+                      }}
+                    />
+                    <strong>{data.imageNames.length ? `${data.imageNames.length} image selected` : 'Tap to select images'}</strong>
+                  </label>
+
+                  {data.imageNames.length ? (
+                    <ul className="image-list" aria-label="Selected reference images">
+                      {data.imageNames.map((name) => (
+                        <li key={name}>{name}</li>
+                      ))}
+                    </ul>
+                  ) : null}
+
+                  <label className="field">
+                    <span>Reference notes</span>
+                    <textarea
+                      name="references"
+                      value={data.references}
+                      onChange={(event) => updateField('references', event.target.value)}
+                      placeholder="Mention what each image is for, existing tattoos nearby, or details Gia should notice."
+                    />
+                  </label>
+                </div>
+              ) : null}
+
+              {stepIndex === 5 ? (
+                <div className="choice-group" aria-label="Choose preferred timing">
+                  {timingOptions.map((option) => (
+                    <button
+                      key={option}
+                      type="button"
+                      className={`choice-button ${data.timing === option ? 'is-selected' : ''}`}
+                      onClick={() => updateField('timing', option)}
+                    >
+                      {option}
+                    </button>
+                  ))}
+                </div>
+              ) : null}
+
+              {stepIndex === 6 ? (
+                <label className="field">
+                  <span>Email</span>
+                  <input
+                    name="email"
+                    type="email"
+                    autoComplete="email"
+                    value={data.email}
+                    onChange={(event) => updateField('email', event.target.value)}
+                    placeholder="you@email.com"
+                    required
+                  />
+                </label>
+              ) : null}
             </div>
 
-            <label className="field">
-              <span>Tattoo idea</span>
-              <textarea
-                name="idea"
-                placeholder="Describe the subject, mood, details, meaning, and anything you want avoided."
-                required
-              />
-            </label>
-
-            <label className="field">
-              <span>Reference notes</span>
-              <textarea
-                name="references"
-                placeholder="Mention any reference images, existing tattoos nearby, or inspiration you will send through."
-              />
-            </label>
-
-            <div className="booking-actions">
-              <button className="btn btn-primary" type="submit">
-                Send tattoo booking
+            <div className="booking-actions funnel-actions">
+              {stepIndex > 0 ? (
+                <button className="btn btn-secondary" type="button" onClick={goBack}>
+                  Back
+                </button>
+              ) : null}
+              <button className="btn btn-primary" type="submit" disabled={!canContinue}>
+                {stepIndex === steps.length - 1 ? 'Send tattoo booking' : 'Continue'}
               </button>
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=Astoria%20Ink%20270%20St%20Asaph%20Street%20Christchurch"
-                target="_blank"
-                rel="noreferrer noopener"
-                className="btn btn-secondary"
-              >
-                View location
-              </a>
             </div>
+
+            {stepIndex === 4 ? (
+              <p className="form-note">Images are listed in the email body. Attach the actual files when the email opens.</p>
+            ) : null}
             {status ? <p className="form-note booking-status">{status}</p> : null}
           </form>
         </div>
