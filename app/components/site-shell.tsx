@@ -69,19 +69,22 @@ export default function SiteShell({ children }: SiteShellProps) {
       {children}
 
       <footer className="footer">
-        <div className="container footer-inner">
-          <div>
-            <p className="footer-brand">Gia at Astoria Ink</p>
-            <p className="footer-note">Blackwork • Micro realism • Black & grey</p>
+        <div className="container footer-content">
+          <div className="footer-inner">
+            <div>
+              <p className="footer-brand">Gia at Astoria Ink</p>
+              <p className="footer-note">Blackwork • Micro realism • Black & grey</p>
+            </div>
+            <nav className="social-links" aria-label="Social links">
+              {socialLinks.map((link) => (
+                <a key={link.label} href={link.href} target="_blank" rel="noreferrer noopener" aria-label={link.label}>
+                  {link.icon}
+                  <span>{link.label}</span>
+                </a>
+              ))}
+            </nav>
           </div>
-          <nav className="social-links" aria-label="Social links">
-            {socialLinks.map((link) => (
-              <a key={link.label} href={link.href} target="_blank" rel="noreferrer noopener" aria-label={link.label}>
-                {link.icon}
-                <span>{link.label}</span>
-              </a>
-            ))}
-          </nav>
+          <p className="footer-credit">Website strategy and build by AI Visibility.</p>
         </div>
       </footer>
     </main>

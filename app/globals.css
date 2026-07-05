@@ -1121,13 +1121,16 @@ button {
   font-size: 0.95rem;
 }
 
+.footer-content {
+  border-top: 1px solid rgba(244, 182, 200, 0.16);
+  padding-top: 1.4rem;
+}
+
 .footer-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.2rem;
-  border-top: 1px solid rgba(244, 182, 200, 0.16);
-  padding-top: 1.4rem;
 }
 
 .footer-brand,
@@ -1145,6 +1148,13 @@ button {
 .footer-note {
   color: var(--soft);
   margin-top: 0.2rem;
+}
+
+.footer-credit {
+  margin: 1rem 0 0;
+  color: rgba(245, 238, 241, 0.48);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
 }
 
 .social-links {
