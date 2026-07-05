@@ -1079,12 +1079,44 @@ button {
   .topbar-inner {
     align-items: flex-start;
     flex-direction: column;
-    gap: 0.65rem;
-    padding: 0.8rem 0;
+    gap: 0.75rem;
+    padding: 0.85rem 0 0.95rem;
+  }
+
+  .brand {
+    font-size: 0.82rem;
+    letter-spacing: 0.14em;
   }
 
   .nav-links {
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem;
+    justify-content: stretch;
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    border-color: rgba(244, 182, 200, 0.16);
+    background: rgba(255, 255, 255, 0.04);
+    font-size: 0.78rem;
+    font-weight: 800;
+    padding: 0.62rem 0.5rem;
+    text-align: center;
+  }
+
+  .nav-links a:last-child {
+    border-color: transparent;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-strong) 100%);
+    color: #210713;
+  }
+
+  .nav-links a:last-child:hover {
+    color: #210713;
   }
 
   .hero {
@@ -1116,6 +1148,10 @@ button {
 
   .hero-copy p {
     font-size: 0.98rem;
+  }
+
+  .hero-meta {
+    display: none;
   }
 
   .hero-actions .btn {
