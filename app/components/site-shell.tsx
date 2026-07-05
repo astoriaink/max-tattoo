@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import type { ReactNode } from 'react';
+import { useState } from 'react';
 
 type SiteShellProps = {
   children: ReactNode;
@@ -29,6 +32,8 @@ const socialLinks = [
 ];
 
 export default function SiteShell({ children }: SiteShellProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <main className="site-shell">
       <header className="topbar">
@@ -36,11 +41,27 @@ export default function SiteShell({ children }: SiteShellProps) {
           <Link href="/" className="brand">
             Gia | Astoria Ink
           </Link>
-          <nav className="nav-links" aria-label="Primary">
-            <Link href="/">Home</Link>
-            <Link href="/faq">Tattoo FAQ</Link>
-            <Link href="/#location">Location</Link>
-            <Link href="/book-now">Book tattoo</Link>
+          <button
+            className="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded={isMenuOpen}
+            aria-controls="primary-navigation"
+            onClick={() => setIsMenuOpen((open) => !open)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+          <nav
+            id="primary-navigation"
+            className={`nav-links ${isMenuOpen ? 'is-open' : ''}`}
+            aria-label="Primary"
+          >
+            <Link href="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
+            <Link href="/faq" onClick={() => setIsMenuOpen(false)}>Tattoo FAQ</Link>
+            <Link href="/#location" onClick={() => setIsMenuOpen(false)}>Location</Link>
+            <Link href="/book-now" onClick={() => setIsMenuOpen(false)}>Book tattoo</Link>
           </nav>
         </div>
       </header>
