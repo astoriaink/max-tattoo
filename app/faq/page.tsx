@@ -46,7 +46,7 @@ const faqs = [
   {
     question: 'How do I book a tattoo with Gia?',
     answer:
-      'Use the tattoo booking form and include your idea, placement, approximate size, preferred style, timing, and reference notes. The form opens an email to Astoria Ink so you can attach reference images before sending.',
+      'Use the tattoo booking form and include your idea, placement, approximate size, preferred style, timing, reference notes, and reference images. Astoria Ink can then review the request and reply by email.',
   },
   {
     question: 'How much does a tattoo with Gia cost?',

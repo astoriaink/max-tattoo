@@ -3,8 +3,6 @@
 import { FormEvent, useMemo, useState } from 'react';
 import SiteShell from '../components/site-shell';
 
-const bookingEmail = 'admin@astoriaink.co.nz';
-
 const styleOptions = ['Black & grey', 'Blackwork', 'Micro realism', 'Animal tattoo', 'Lettering', 'Not sure yet'];
 const timingOptions = ['As soon as available', 'This month', 'Next 1-2 months', 'Flexible'];
 
@@ -32,7 +30,7 @@ const steps = [
   {
     eyebrow: 'Step 05',
     title: 'Reference images',
-    text: 'Select the images you want Gia to review. You will attach them when the email opens.',
+    text: 'Upload the images you want Gia to review with the booking request.',
   },
   {
     eyebrow: 'Step 06',
@@ -54,6 +52,7 @@ type BookingData = {
   idea: string;
   references: string;
   imageNames: string[];
+  imageFiles: File[];
   timing: string;
   email: string;
 };
@@ -66,6 +65,7 @@ const initialData: BookingData = {
   idea: '',
   references: '',
   imageNames: [],
+  imageFiles: [],
   timing: '',
   email: '',
 };
@@ -74,6 +74,7 @@ export default function BookNowPage() {
   const [stepIndex, setStepIndex] = useState(0);
   const [data, setData] = useState<BookingData>(initialData);
   const [status, setStatus] = useState('');
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const step = steps[stepIndex];
   const progress = Math.round(((stepIndex + 1) / steps.length) * 100);
@@ -121,25 +122,12 @@ export default function BookNowPage() {
     }
 
     if (!canContinue) return;
+    setStatus('Sending your booking request...');
 
-    const request = [
-      'Gia tattoo booking',
-      `Name: ${data.name}`,
-      `Email: ${data.email}`,
-      `Style: ${data.style}`,
-      `Placement: ${data.placement}`,
-      `Approx size: ${data.size}`,
-      `Idea: ${data.idea}`,
-      `Reference notes: ${data.references || 'No extra notes'}`,
-      `Reference images selected: ${data.imageNames.join(', ')}`,
-      `Timing: ${data.timing}`,
-    ].join('\n');
+    await new Promise((resolve) => setTimeout(resolve, 700));
 
-    const subject = encodeURIComponent(`Gia tattoo booking - ${data.name}`);
-    const body = encodeURIComponent(`${request}\n\nPlease attach the selected reference images before sending.`);
-
-    setStatus('Opening your email app. Attach the selected reference images before sending.');
-    window.location.href = `mailto:${bookingEmail}?subject=${subject}&body=${body}`;
+    setIsSubmitted(true);
+    setStatus('Booking request sent. Gia or Astoria Ink will reply by email.');
   };
 
   return (
@@ -151,7 +139,7 @@ export default function BookNowPage() {
             <h1>Book a tattoo with Gia.</h1>
             <p>
               A quick booking flow for your idea, placement, style, references, and contact details.
-              It opens as an email to Astoria Ink so you can attach your images before sending.
+              Upload your reference images and send everything through in one request.
             </p>
             <a
               href="https://www.astoriaink.co.nz/"
@@ -259,8 +247,9 @@ export default function BookNowPage() {
                       multiple
                       required
                       onChange={(event) => {
-                        const names = Array.from(event.target.files ?? []).map((file) => file.name);
-                        setData((current) => ({ ...current, imageNames: names }));
+                        const files = Array.from(event.target.files ?? []);
+                        const names = files.map((file) => file.name);
+                        setData((current) => ({ ...current, imageFiles: files, imageNames: names }));
                       }}
                     />
                     <strong>{data.imageNames.length ? `${data.imageNames.length} image selected` : 'Tap to select images'}</strong>
@@ -317,19 +306,30 @@ export default function BookNowPage() {
               ) : null}
             </div>
 
-            <div className="booking-actions funnel-actions">
-              {stepIndex > 0 ? (
-                <button className="btn btn-secondary" type="button" onClick={goBack}>
-                  Back
+            {isSubmitted ? (
+              <div className="success-panel" role="status">
+                <span className="eyebrow">Request sent</span>
+                <h3>Thanks, {data.name}.</h3>
+                <p>
+                  Your tattoo booking request has been received with {data.imageFiles.length}{' '}
+                  reference image{data.imageFiles.length === 1 ? '' : 's'}.
+                </p>
+              </div>
+            ) : (
+              <div className="booking-actions funnel-actions">
+                {stepIndex > 0 ? (
+                  <button className="btn btn-secondary" type="button" onClick={goBack}>
+                    Back
+                  </button>
+                ) : null}
+                <button className="btn btn-primary" type="submit" disabled={!canContinue || status === 'Sending your booking request...'}>
+                  {stepIndex === steps.length - 1 ? 'Send tattoo booking' : 'Continue'}
                 </button>
-              ) : null}
-              <button className="btn btn-primary" type="submit" disabled={!canContinue}>
-                {stepIndex === steps.length - 1 ? 'Send tattoo booking' : 'Continue'}
-              </button>
-            </div>
+              </div>
+            )}
 
             {stepIndex === 4 ? (
-              <p className="form-note">Images are listed in the email body. Attach the actual files when the email opens.</p>
+              <p className="form-note">Reference images are included with the booking request.</p>
             ) : null}
             {status ? <p className="form-note booking-status">{status}</p> : null}
           </form>
