@@ -42,9 +42,9 @@ export default function SiteShell({ children }: SiteShellProps) {
             Gia | Astoria Ink
           </Link>
           <button
-            className="menu-toggle"
+            className={`menu-toggle ${isMenuOpen ? 'is-open' : ''}`}
             type="button"
-            aria-label="Open navigation menu"
+            aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={isMenuOpen}
             aria-controls="primary-navigation"
             onClick={() => setIsMenuOpen((open) => !open)}
