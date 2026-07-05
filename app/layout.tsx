@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     template: '%s | Astoria Ink',
   },
   description:
-    'Gia is a Christchurch tattoo artist at Astoria Ink specialising in black and grey tattoos, micro realism, fine line, animal tattoos, and pet-inspired designs.',
+    'Gia is a Christchurch tattoo artist at Astoria Ink specialising in black and grey tattoos, micro realism, blackwork, animal tattoos, and pet-inspired designs.',
   keywords: [
     'Astoria Ink',
     'tattoo artist Christchurch',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     'animal tattoos Christchurch',
     'animal tattoo artist Christchurch',
     'pet portrait tattoo Christchurch',
-    'fine line tattoos',
+    'blackwork tattoos',
     'micro realism tattoos',
     'black and grey tattoos',
     'Christchurch tattoos',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Gia Tattoo Artist Christchurch | Black & Grey Micro Realism',
     description:
-      'Black and grey tattoos, micro realism, fine line, animal tattoos, and pet-inspired work by Gia at Astoria Ink in Christchurch.',
+      'Black and grey tattoos, micro realism, blackwork, animal tattoos, and pet-inspired work by Gia at Astoria Ink in Christchurch.',
     type: 'website',
     url: 'https://www.astoria-ink.com',
     siteName: 'Astoria Ink',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Gia Tattoo Artist Christchurch | Black & Grey Micro Realism',
     description:
-      'Black and grey tattoos, micro realism, fine line, animal tattoos, and pet-inspired work by Gia at Astoria Ink in Christchurch.',
+      'Black and grey tattoos, micro realism, blackwork, animal tattoos, and pet-inspired work by Gia at Astoria Ink in Christchurch.',
   },
 };
 

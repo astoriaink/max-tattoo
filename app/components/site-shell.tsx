@@ -72,7 +72,7 @@ export default function SiteShell({ children }: SiteShellProps) {
         <div className="container footer-inner">
           <div>
             <p className="footer-brand">Gia at Astoria Ink</p>
-            <p className="footer-note">Fine line • Micro realism • Black & grey</p>
+            <p className="footer-note">Blackwork • Micro realism • Black & grey</p>
           </div>
           <nav className="social-links" aria-label="Social links">
             {socialLinks.map((link) => (

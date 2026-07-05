@@ -75,7 +75,7 @@ export default function BookNowPage() {
                   <option value="" disabled>
                     Select a style
                   </option>
-                  <option>Fine line</option>
+                  <option>Blackwork</option>
                   <option>Micro realism</option>
                   <option>Black & grey</option>
                   <option>Lettering</option>

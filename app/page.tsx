@@ -7,8 +7,8 @@ import SiteShell from './components/site-shell';
 
 const specialties = [
   {
-    title: 'Fine Line',
-    text: 'Clean linework for small tattoos, lettering, and delicate pieces with lasting clarity.',
+    title: 'Blackwork',
+    text: 'Bold blackwork tattoos with strong silhouettes, clean contrast, and graphic animal detail.',
   },
   {
     title: 'Micro Realism',
@@ -24,13 +24,13 @@ const artistHighlights = [
   'Black and grey tattoos with soft realism and tonal control',
   'Micro realism tattoos with soft black and grey shading',
   'Animal tattoos, wildlife pieces, and pet portrait concepts',
-  'Fine line lettering and delicate detail work',
+  'Blackwork pieces with bold contrast and clean readable shapes',
 ];
 
 const latestWork = [
   {
-    title: 'Fine line florals',
-    image: '/astoria-gia-full/dc8a88_0ab0355665b74e5d9416701893cbd62c~mv2.jpg',
+    title: 'Blackwork crocodile',
+    image: '/astoria-gia-full/dc8a88_e9874b583b8d4d50b9ffdcb5fd342adaf003.jpg',
   },
   {
     title: 'Soft micro detail',
@@ -119,8 +119,8 @@ export default function HomePage() {
         <div className="container hero-grid">
           <div className="hero-copy">
             <span className="eyebrow reveal reveal-1">Christchurch tattoo artist • Astoria Ink</span>
-            <h1 className="kinetic-title" aria-label="Gia. Christchurch tattoo artist for black and grey tattoos, micro realism, animal tattoos, and fine line work at Astoria Ink.">
-              {['Gia', 'Black & grey', 'Micro realism', 'Fine line'].map(
+            <h1 className="kinetic-title" aria-label="Gia. Christchurch tattoo artist for black and grey tattoos, micro realism, animal tattoos, and blackwork at Astoria Ink.">
+              {['Gia', 'Black & grey', 'Micro realism', 'Blackwork'].map(
                 (line, index) => (
                   <span key={line} style={{ '--word-index': index } as CSSProperties}>
                     {line}
@@ -130,7 +130,7 @@ export default function HomePage() {
             </h1>
             <p className="reveal reveal-2">
               Gia is a Christchurch tattoo artist at Astoria Ink, focused on black and
-              grey tattoos, micro realism, fine line detail, and animal tattoo concepts.
+              grey tattoos, micro realism, blackwork, and animal tattoo concepts.
             </p>
             <div className="hero-actions">
               <Link href="/book-now" className="btn btn-primary reveal reveal-3">
@@ -182,7 +182,7 @@ export default function HomePage() {
           <div className="section-title section-title-row" data-scroll>
             <div>
               <span className="eyebrow">Latest from Gia</span>
-              <h2>Recent black & grey tattoos, micro realism, and animal detail.</h2>
+              <h2>Recent black & grey tattoos, blackwork, micro realism, and animal detail.</h2>
             </div>
             <a
               href="https://www.instagram.com/gia.tattooz?igsh=dms0MDRqNWowc25y"
@@ -248,7 +248,7 @@ export default function HomePage() {
               </p>
               <p>
                 Gia is a Christchurch tattoo artist at Astoria Ink with a focus on black
-                and grey tattoos, micro realism, fine line work, and animal tattoo
+                and grey tattoos, micro realism, blackwork, and animal tattoo
                 concepts. Her work suits clients looking for soft realism, pet-inspired
                 tattoos, wildlife ideas, and small detailed pieces that need careful
                 placement, contrast, and longevity.

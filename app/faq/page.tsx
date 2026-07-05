@@ -6,7 +6,7 @@ const faqs = [
   {
     question: 'Does Gia do black and grey tattoos in Christchurch?',
     answer:
-      'Yes. Gia tattoos from Astoria Ink in Christchurch and focuses on soft black and grey work, micro realism, fine line detail, and carefully shaded realistic pieces.',
+      'Yes. Gia tattoos from Astoria Ink in Christchurch and focuses on soft black and grey work, micro realism, blackwork, and carefully shaded realistic pieces.',
   },
   {
     question: 'Does Gia do animal tattoos?',
@@ -21,7 +21,7 @@ const faqs = [
   {
     question: 'What styles does Gia specialise in?',
     answer:
-      'Gia’s main styles are black and grey tattoos, micro realism, fine line work, delicate lettering, and animal tattoo concepts. Her work is suited to clients wanting detail, softness, and a considered design.',
+      'Gia’s main styles are black and grey tattoos, micro realism, blackwork, delicate lettering, and animal tattoo concepts. Her work is suited to clients wanting detail, softness, contrast, and a considered design.',
   },
   {
     question: 'Is micro realism good for animal tattoos?',
@@ -31,7 +31,7 @@ const faqs = [
   {
     question: 'How big should a black and grey animal tattoo be?',
     answer:
-      'The right size depends on the animal, placement, and level of detail. Pet portraits and realistic wildlife tattoos usually need more space than simple fine line designs so the shading and features stay clear over time.',
+      'The right size depends on the animal, placement, and level of detail. Pet portraits, blackwork animals, and realistic wildlife tattoos usually need enough space for shading, contrast, and key features to stay clear over time.',
   },
   {
     question: 'What reference photos should I send for an animal tattoo?',
@@ -66,9 +66,9 @@ const faqs = [
 ];
 
 export const metadata: Metadata = {
-  title: 'Gia Tattoo FAQ | Black & Grey, Animal Tattoos & Micro Realism',
+  title: 'Gia Tattoo FAQ | Black & Grey, Blackwork & Micro Realism',
   description:
-    'FAQ for booking with Gia at Astoria Ink Christchurch, including black and grey tattoos, animal tattoos, pet-inspired designs, micro realism, reference photos, sizing, and booking.',
+    'FAQ for booking with Gia at Astoria Ink Christchurch, including black and grey tattoos, blackwork, animal tattoos, pet-inspired designs, micro realism, reference photos, sizing, and booking.',
   alternates: {
     canonical: '/faq',
   },
