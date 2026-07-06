@@ -39,8 +39,8 @@ const steps = [
   },
   {
     eyebrow: 'Final step',
-    title: 'Your email',
-    text: 'Finish with your email and send the booking request to Astoria Ink.',
+    title: 'Your contact details',
+    text: 'Email and phone are required so the booking system works properly.',
   },
 ];
 
@@ -55,6 +55,7 @@ type BookingData = {
   imageFiles: File[];
   timing: string;
   email: string;
+  phone: string;
 };
 
 const initialData: BookingData = {
@@ -68,6 +69,7 @@ const initialData: BookingData = {
   imageFiles: [],
   timing: '',
   email: '',
+  phone: '',
 };
 
 export default function BookNowPage() {
@@ -94,7 +96,7 @@ export default function BookNowPage() {
       case 5:
         return Boolean(data.timing);
       case 6:
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email);
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email) && data.phone.replace(/\D/g, '').length >= 7;
       default:
         return false;
     }
@@ -340,18 +342,32 @@ export default function BookNowPage() {
               ) : null}
 
               {stepIndex === 6 ? (
-                <label className="field">
-                  <span>Email</span>
-                  <input
-                    name="email"
-                    type="email"
-                    autoComplete="email"
-                    value={data.email}
-                    onChange={(event) => updateField('email', event.target.value)}
-                    placeholder="you@email.com"
-                    required
-                  />
-                </label>
+                <div className="form-grid">
+                  <label className="field">
+                    <span>Email</span>
+                    <input
+                      name="email"
+                      type="email"
+                      autoComplete="email"
+                      value={data.email}
+                      onChange={(event) => updateField('email', event.target.value)}
+                      placeholder="you@email.com"
+                      required
+                    />
+                  </label>
+                  <label className="field">
+                    <span>Phone</span>
+                    <input
+                      name="phone"
+                      type="tel"
+                      autoComplete="tel"
+                      value={data.phone}
+                      onChange={(event) => updateField('phone', event.target.value)}
+                      placeholder="Your phone number"
+                      required
+                    />
+                  </label>
+                </div>
               ) : null}
             </div>
 
