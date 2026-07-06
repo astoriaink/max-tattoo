@@ -31,18 +31,22 @@ const latestWork = [
   {
     title: 'Blackwork crocodile',
     image: '/astoria-gia-full/dc8a88_e9874b583b8d4d50b9ffdcb5fd342adaf003.jpg',
+    url: 'https://www.instagram.com/p/DTmiQzBj-o1/?igsh=MW1xeWw4OGxtOTk5bA==',
   },
   {
     title: 'Soft micro detail',
     image: '/astoria-gia-full/dc8a88_4a72d34ce5284c4982280c6307a58a76~mv2.png',
+    url: 'https://www.instagram.com/p/DWnE7ACj902/?igsh=MTZwNDl1YmJvbXE2eQ==',
   },
   {
     title: 'Animal tattoo realism',
     image: '/astoria-gia-full/dc8a88_66f2606471514a5b9eb58345fbb81c83~mv2.png',
+    url: 'https://www.instagram.com/p/DZbwyCfPPEh/?igsh=MXczZzFoYzV2cTA4NQ==',
   },
   {
     title: 'Black & grey detail',
     image: '/astoria-gia-full/dc8a88_ca301c3370484f2b854abe6203348c3b~mv2.jpg',
+    url: 'https://www.instagram.com/p/DRlUZeMjyvx/?igsh=cW95ZTU2bHNrdTA5',
   },
 ];
 
@@ -197,7 +201,7 @@ export default function HomePage() {
             {latestWork.map((item, index) => (
               <a
                 key={item.title}
-                href="https://www.instagram.com/gia.tattooz?igsh=dms0MDRqNWowc25y"
+                href={item.url}
                 target="_blank"
                 rel="noreferrer noopener"
                 className="work-card"
