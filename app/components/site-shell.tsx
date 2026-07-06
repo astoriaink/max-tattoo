@@ -86,7 +86,13 @@ export default function SiteShell({ children }: SiteShellProps) {
               ))}
             </nav>
           </div>
-          <p className="footer-credit">Website build by AI Visibility.</p>
+          <p className="footer-credit">
+            Website build by{' '}
+            <a href="https://www.rankmyvisibility.com/" target="_blank" rel="noreferrer noopener">
+              AI Visibility
+            </a>
+            .
+          </p>
         </div>
       </footer>
     </main>
