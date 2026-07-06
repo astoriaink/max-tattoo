@@ -3,7 +3,7 @@
 import { FormEvent, useMemo, useState } from 'react';
 import SiteShell from '../components/site-shell';
 
-const styleOptions = ['Black & grey', 'Blackwork', 'Micro realism', 'Animal tattoo', 'Lettering', 'Not sure yet'];
+const styleOptions = ['Black & grey', 'Blackwork', 'Micro realism', 'Fine line', 'Lettering', 'Not sure yet'];
 const timingOptions = ['As soon as available', 'This month', 'Next 1-2 months', 'Flexible'];
 
 const steps = [
