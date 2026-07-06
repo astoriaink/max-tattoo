@@ -22,7 +22,7 @@ const socialLinks = [
   },
   {
     label: 'TikTok',
-    href: 'https://www.tiktok.com/@astoriaink',
+    href: 'https://www.tiktok.com/@gia.tattooz',
     icon: (
       <svg aria-hidden="true" viewBox="0 0 24 24">
         <path d="M14 3v10.1a4.6 4.6 0 1 1-4.6-4.6c.42 0 .82.06 1.2.17v3.15a1.65 1.65 0 1 0 1.2 1.58V3h2.2c.3 2.12 1.55 3.48 3.8 4.1v3.05A7.05 7.05 0 0 1 14 8.63Z" />
