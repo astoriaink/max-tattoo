@@ -29,24 +29,24 @@ const artistHighlights = [
 
 const latestWork = [
   {
-    title: 'Blackwork bear tattoo',
-    image: '/instagram-posts/gia-instagram-1.jpg',
-    url: 'https://www.instagram.com/p/DTmiQzBj-o1/?igsh=MW1xeWw4OGxtOTk5bA==',
-  },
-  {
     title: 'Centipede blackwork design',
-    image: '/instagram-posts/gia-instagram-2.jpg',
+    image: '/latest-work/centipede-back-tattoo.jpg',
     url: 'https://www.instagram.com/p/DWnE7ACj902/?igsh=MTZwNDl1YmJvbXE2eQ==',
   },
   {
-    title: 'Whale shark tattoo',
-    image: '/instagram-posts/gia-instagram-3.jpg',
+    title: 'Blackwork tiger tattoo',
+    image: '/latest-work/blackwork-tiger-tattoo.jpg',
+    url: 'https://www.instagram.com/p/DRlUZeMjyvx/?igsh=cW95ZTU2bHNrdTA5',
+  },
+  {
+    title: 'Cat micro realism tattoo',
+    image: '/latest-work/cat-micro-realism-tattoo.jpg',
     url: 'https://www.instagram.com/p/DZbwyCfPPEh/?igsh=MXczZzFoYzV2cTA4NQ==',
   },
   {
-    title: 'Blackwork tiger tattoo',
-    image: '/instagram-posts/gia-instagram-4.jpg',
-    url: 'https://www.instagram.com/p/DRlUZeMjyvx/?igsh=cW95ZTU2bHNrdTA5',
+    title: 'Black and grey bear tattoo',
+    image: '/latest-work/bear-black-grey-tattoo.jpg',
+    url: 'https://www.instagram.com/p/DTmiQzBj-o1/?igsh=MW1xeWw4OGxtOTk5bA==',
   },
 ];
 
