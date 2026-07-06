@@ -53,7 +53,7 @@ const faqs = [
   {
     question: 'How much does a tattoo with Gia cost?',
     answer:
-      'Pricing depends on size, placement, detail, style, and appointment time. Black and grey realism, animal tattoos, and micro realism pieces are best quoted after Gia can review the idea and references.',
+      'Gia’s minimum tattoo price is $150. Final pricing depends on size, placement, detail, style, and appointment time, so detailed pieces are best quoted after Gia can review the idea and references.',
   },
   {
     question: 'Can Gia help refine my tattoo idea?',
