@@ -871,6 +871,7 @@ section {
   padding: 1.2rem;
   text-align: center;
   cursor: pointer;
+  touch-action: manipulation;
 }
 
 .upload-field span {
@@ -891,6 +892,8 @@ section {
   inset: 0;
   opacity: 0;
   cursor: pointer;
+  font-size: 16px;
+  touch-action: manipulation;
 }
 
 .image-list {
@@ -1102,6 +1105,7 @@ textarea {
   background: rgba(255, 255, 255, 0.04);
   color: var(--text);
   font: inherit;
+  font-size: 16px;
   padding: 0.9rem 1rem;
 }
 
