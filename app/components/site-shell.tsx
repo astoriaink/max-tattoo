@@ -39,7 +39,7 @@ export default function SiteShell({ children }: SiteShellProps) {
       <header className="topbar">
         <div className="container topbar-inner">
           <Link href="/" className="brand">
-            MaxTatz
+            maxtatz
           </Link>
           <button
             className={`menu-toggle ${isMenuOpen ? 'is-open' : ''}`}
