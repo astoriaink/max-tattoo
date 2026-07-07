@@ -3,14 +3,14 @@
 import { FormEvent, useEffect, useMemo, useState } from 'react';
 import SiteShell from '../components/site-shell';
 
-const styleOptions = ['Black & grey', 'Blackwork', 'Micro realism', 'Fine line', 'Lettering', 'Not sure yet'];
+const styleOptions = ['Black & grey realism', 'Large-scale piece', 'Portrait realism', 'Wildlife realism', 'Dark realism', 'Not sure yet'];
 const timingOptions = ['As soon as available', 'This month', 'Next 1-2 months', 'Flexible'];
 
 const steps = [
   {
     eyebrow: 'Step 01',
     title: 'Your name',
-    text: 'Start with the basics so Gia knows who the booking is for.',
+    text: 'Start with the basics so Max knows who the booking is for.',
   },
   {
     eyebrow: 'Step 02',
@@ -30,7 +30,7 @@ const steps = [
   {
     eyebrow: 'Step 05',
     title: 'Reference images',
-    text: 'Upload the images you want Gia to review with the booking request.',
+    text: 'Upload the images you want Max to review with the booking request.',
   },
   {
     eyebrow: 'Step 06',
@@ -181,7 +181,7 @@ export default function BookNowPage() {
     await new Promise((resolve) => setTimeout(resolve, 700));
 
     setIsSubmitted(true);
-    setStatus('Booking request sent. Gia or Astoria Ink will reply by email.');
+    setStatus('Booking request sent. Max or Astoria Ink will reply by email.');
   };
 
   return (
@@ -190,7 +190,7 @@ export default function BookNowPage() {
         <div className="container booking-layout">
           <div className="hero-card booking-intro">
             <span className="eyebrow">Book tattoo</span>
-            <h1>Book a tattoo with Gia.</h1>
+            <h1>Book a tattoo with Max.</h1>
             <p>
               A quick booking flow for your idea, placement, style, references, and contact details.
               Upload your reference images and send everything through in one request.
@@ -335,7 +335,7 @@ export default function BookNowPage() {
                       name="references"
                       value={data.references}
                       onChange={(event) => updateField('references', event.target.value)}
-                      placeholder="Mention what each image is for, existing tattoos nearby, or details Gia should notice."
+                      placeholder="Mention what each image is for, existing tattoos nearby, or details Max should notice."
                     />
                   </label>
                 </div>

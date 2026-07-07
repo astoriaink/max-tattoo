@@ -11,7 +11,7 @@ type SiteShellProps = {
 const socialLinks = [
   {
     label: 'Instagram',
-    href: 'https://www.instagram.com/gia.tattooz?igsh=dms0MDRqNWowc25y',
+    href: 'https://www.instagram.com/max.tatz/',
     icon: (
       <svg aria-hidden="true" viewBox="0 0 24 24">
         <rect x="3" y="3" width="18" height="18" rx="5" />
@@ -22,7 +22,7 @@ const socialLinks = [
   },
   {
     label: 'TikTok',
-    href: 'https://www.tiktok.com/@gia.tattooz',
+    href: 'https://www.tiktok.com/@max.tatz',
     icon: (
       <svg aria-hidden="true" viewBox="0 0 24 24">
         <path d="M14 3v10.1a4.6 4.6 0 1 1-4.6-4.6c.42 0 .82.06 1.2.17v3.15a1.65 1.65 0 1 0 1.2 1.58V3h2.2c.3 2.12 1.55 3.48 3.8 4.1v3.05A7.05 7.05 0 0 1 14 8.63Z" />
@@ -39,7 +39,7 @@ export default function SiteShell({ children }: SiteShellProps) {
       <header className="topbar">
         <div className="container topbar-inner">
           <Link href="/" className="brand">
-            Gia Tattoos
+            Max Tattoos
           </Link>
           <button
             className={`menu-toggle ${isMenuOpen ? 'is-open' : ''}`}
@@ -72,8 +72,8 @@ export default function SiteShell({ children }: SiteShellProps) {
         <div className="container footer-content">
           <div className="footer-inner">
             <div>
-              <p className="footer-brand">Gia at Astoria Ink</p>
-              <p className="footer-note">Blackwork • Micro realism • Black & grey</p>
+              <p className="footer-brand">Max at Astoria Ink</p>
+              <p className="footer-note">Black & grey realism • Large-scale custom tattoos</p>
             </div>
             <nav className="social-links" aria-label="Social links">
               {socialLinks.map((link) => (

@@ -1,10 +1,10 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
-const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://gia-tattoo-site.vercel.app').replace(/\/$/, '');
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://max-tattoo-site.vercel.app').replace(/\/$/, '');
 const astoriaInkUrl = 'https://www.astoriaink.co.nz/';
-const giaInstagramUrl = 'https://www.instagram.com/gia.tattooz/';
-const giaTikTokUrl = 'https://www.tiktok.com/@gia.tattooz';
+const maxInstagramUrl = 'https://www.instagram.com/max.tatz/';
+const maxTikTokUrl = 'https://www.tiktok.com/@max.tatz';
 const studioAddress = {
   '@type': 'PostalAddress',
   streetAddress: 'The SQ, Level 2, 270 St Asaph Street',
@@ -16,21 +16,26 @@ const studioAddress = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Gia Tattoo Artist Christchurch | Black & Grey Micro Realism',
-    template: '%s | Gia Tattoos',
+    default: 'Max Tattoo Artist Christchurch | Black & Grey Realism',
+    template: '%s | Max Tattoos',
   },
   description:
-    'Gia is a Christchurch tattoo artist at Astoria Ink specialising in black and grey tattoos, micro realism, blackwork, animal tattoos, and pet-inspired designs.',
+    'Max is a Christchurch tattoo artist at Astoria Ink specialising in black and grey realism, large-scale custom tattoos, portraits, wildlife, dark realism, and detailed custom designs.',
   keywords: [
     'Astoria Ink',
+    'Max tattoo artist Christchurch',
+    'Max tattoos Christchurch',
     'tattoo artist Christchurch',
     'tattoo chch',
     'Christchurch tattoo artist',
-    'animal tattoos Christchurch',
-    'animal tattoo artist Christchurch',
-    'pet portrait tattoo Christchurch',
-    'blackwork tattoos',
-    'micro realism tattoos',
+    'black and grey realism Christchurch',
+    'black and grey tattoo artist Christchurch',
+    'large scale tattoo Christchurch',
+    'realism tattoo artist Christchurch',
+    'portrait tattoo Christchurch',
+    'wildlife tattoo Christchurch',
+    'custom tattoo designs Christchurch',
+    'dark realism tattoo Christchurch',
     'black and grey tattoos',
     'Christchurch tattoos',
   ],
@@ -44,18 +49,18 @@ export const metadata: Metadata = {
     apple: '/favicon.svg',
   },
   openGraph: {
-    title: 'Gia Tattoo Artist Christchurch | Black & Grey Micro Realism',
+    title: 'Max Tattoo Artist Christchurch | Black & Grey Realism',
     description:
-      'Black and grey tattoos, micro realism, blackwork, animal tattoos, and pet-inspired work by Gia at Astoria Ink in Christchurch.',
+      'Black and grey realism, large-scale custom tattoos, portraits, wildlife, and dark realism by Max at Astoria Ink in Christchurch.',
     type: 'website',
     url: siteUrl,
-    siteName: 'Gia Tattoos',
+    siteName: 'Max Tattoos',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Gia Tattoo Artist Christchurch | Black & Grey Micro Realism',
+    title: 'Max Tattoo Artist Christchurch | Black & Grey Realism',
     description:
-      'Black and grey tattoos, micro realism, blackwork, animal tattoos, and pet-inspired work by Gia at Astoria Ink in Christchurch.',
+      'Black and grey realism, large-scale custom tattoos, portraits, wildlife, and dark realism by Max at Astoria Ink in Christchurch.',
   },
 };
 
@@ -71,21 +76,21 @@ const structuredData = {
     {
       '@type': 'WebSite',
       '@id': `${siteUrl}/#website`,
-      name: 'Gia Tattoos',
+      name: 'Max Tattoos',
       url: siteUrl,
       inLanguage: 'en-NZ',
       description:
-        'Artist-focused tattoo portfolio and booking site for Gia, a Christchurch tattoo artist at Astoria Ink.',
+        'Artist-focused tattoo portfolio and booking site for Max, a Christchurch black and grey realism tattoo artist at Astoria Ink.',
       publisher: {
-        '@id': `${siteUrl}/#gia`,
+        '@id': `${siteUrl}/#max`,
       },
     },
     {
       '@type': 'Person',
-      '@id': `${siteUrl}/#gia`,
-      name: 'Gia',
+      '@id': `${siteUrl}/#max`,
+      name: 'Max',
       url: siteUrl,
-      image: `${siteUrl}/artist/gia-main-portrait.jpg`,
+      image: `${siteUrl}/max-work/portrait-realism.jpg`,
       jobTitle: 'Tattoo Artist',
       worksFor: {
         '@id': `${astoriaInkUrl}#tattoo-parlor`,
@@ -93,13 +98,15 @@ const structuredData = {
       workLocation: {
         '@id': `${astoriaInkUrl}#tattoo-parlor`,
       },
-      sameAs: [giaInstagramUrl, giaTikTokUrl],
+      sameAs: [maxInstagramUrl, maxTikTokUrl],
       knowsAbout: [
+        'Black and grey realism tattoos',
         'Black and grey tattoos',
-        'Blackwork tattoos',
-        'Micro realism tattoos',
-        'Animal tattoos',
-        'Pet-inspired tattoos',
+        'Large-scale custom tattoos',
+        'Portrait tattoos',
+        'Wildlife tattoos',
+        'Dark realism tattoos',
+        'Custom tattoo designs',
         'Christchurch tattoos',
       ],
       mainEntityOfPage: {

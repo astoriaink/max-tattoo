@@ -7,46 +7,46 @@ import SiteShell from './components/site-shell';
 
 const specialties = [
   {
-    title: 'Blackwork',
-    text: 'Bold blackwork tattoos with strong silhouettes, clean contrast, and graphic animal detail.',
+    title: 'Black & Grey Realism',
+    text: 'High contrast black and grey realism tattoos with depth, clean shading, and strong readability.',
   },
   {
-    title: 'Micro Realism',
-    text: 'Detailed micro realism tattoos in Christchurch, built with soft shading and precision.',
+    title: 'Large-Scale Pieces',
+    text: 'Custom large-scale tattoos planned around body flow, composition, balance, and longevity.',
   },
   {
-    title: 'Black & Grey',
-    text: 'Soft black and grey realism for animal tattoos, pet-inspired pieces, and tonal detail.',
+    title: 'Portraits & Wildlife',
+    text: 'Realism work for portraits, animals, nature concepts, dark imagery, and detailed custom designs.',
   },
 ];
 
 const artistHighlights = [
-  'Black and grey tattoos with soft realism and tonal control',
-  'Micro realism tattoos with soft black and grey shading',
-  'Animal tattoos, wildlife pieces, and pet portrait concepts',
-  'Blackwork pieces with bold contrast and clean readable shapes',
+  'Black and grey realism with strong contrast and depth',
+  'Large-scale custom tattoos designed around body flow',
+  'Portraits, wildlife, nature, and dark realism concepts',
+  'Detailed shading, clean execution, and strong composition',
 ];
 
 const latestWork = [
   {
-    title: 'Centipede blackwork design',
-    image: '/latest-work/centipede-back-tattoo.jpg',
-    url: 'https://www.instagram.com/p/DWnE7ACj902/?igsh=MTZwNDl1YmJvbXE2eQ==',
+    title: 'Skull realism tattoo',
+    image: '/max-work/skull-realism.jpg',
+    url: 'https://www.instagram.com/max.tatz/',
   },
   {
-    title: 'Blackwork tiger tattoo',
-    image: '/latest-work/blackwork-tiger-tattoo.jpg',
-    url: 'https://www.instagram.com/p/DRlUZeMjyvx/?igsh=cW95ZTU2bHNrdTA5',
+    title: 'Medusa realism tattoo',
+    image: '/max-work/medusa-realism.jpg',
+    url: 'https://www.instagram.com/max.tatz/',
   },
   {
-    title: 'Cat micro realism tattoo',
-    image: '/latest-work/cat-micro-realism-tattoo.jpg',
-    url: 'https://www.instagram.com/p/DZbwyCfPPEh/?igsh=MXczZzFoYzV2cTA4NQ==',
+    title: 'Samurai realism tattoo',
+    image: '/max-work/samurai-realism.jpg',
+    url: 'https://www.instagram.com/max.tatz/',
   },
   {
-    title: 'Black and grey bear tattoo',
-    image: '/latest-work/bear-black-grey-tattoo.jpg',
-    url: 'https://www.instagram.com/p/DTmiQzBj-o1/?igsh=MW1xeWw4OGxtOTk5bA==',
+    title: 'Portrait realism tattoo',
+    image: '/max-work/portrait-realism.jpg',
+    url: 'https://www.instagram.com/max.tatz/',
   },
 ];
 
@@ -57,7 +57,7 @@ const processSteps = [
   },
   {
     title: 'Design',
-    text: 'Gia refines the direction into a tattoo-ready concept with balance and longevity in mind.',
+    text: 'Max shapes the direction into a tattoo-ready concept with composition and longevity in mind.',
   },
   {
     title: 'Appointment',
@@ -123,8 +123,8 @@ export default function HomePage() {
         <div className="container hero-grid">
           <div className="hero-copy">
             <span className="eyebrow reveal reveal-1">Christchurch tattoo artist • Astoria Ink</span>
-            <h1 className="kinetic-title" aria-label="Gia. Christchurch tattoo artist for black and grey tattoos, micro realism, animal tattoos, and blackwork at Astoria Ink.">
-              {['Gia', 'Black & grey', 'Micro realism', 'Blackwork'].map(
+            <h1 className="kinetic-title" aria-label="Max. Christchurch tattoo artist for black and grey realism, large-scale custom tattoos, portraits, wildlife, and dark realism at Astoria Ink.">
+              {['Max', 'Black & grey', 'Large-scale', 'Realism'].map(
                 (line, index) => (
                   <span key={line} style={{ '--word-index': index } as CSSProperties}>
                     {line}
@@ -133,15 +133,15 @@ export default function HomePage() {
               )}
             </h1>
             <p className="reveal reveal-2">
-              Gia is a Christchurch tattoo artist at Astoria Ink, focused on black and
-              grey tattoos, micro realism, blackwork, and animal tattoo concepts.
+              Max is a Christchurch tattoo artist at Astoria Ink, focused on black and
+              grey realism, large-scale custom tattoos, portraits, wildlife, and dark realism.
             </p>
             <div className="hero-actions">
               <Link href="/book-now" className="btn btn-primary reveal reveal-3">
                 Book tattoo
               </Link>
               <a
-                href="https://www.instagram.com/gia.tattooz?igsh=dms0MDRqNWowc25y"
+                href="https://www.instagram.com/max.tatz/"
                 target="_blank"
                 rel="noreferrer noopener"
                 className="btn btn-secondary reveal reveal-3"
@@ -153,8 +153,8 @@ export default function HomePage() {
 
           <div className="hero-meta reveal reveal-4">
             <span>Black & grey</span>
-            <span>Micro realism</span>
-            <span>Animal tattoos</span>
+            <span>Large-scale</span>
+            <span>Realism</span>
           </div>
         </div>
       </section>
@@ -163,7 +163,7 @@ export default function HomePage() {
         <div className="container">
           <div className="section-title" data-scroll>
             <h2>Specialties</h2>
-            <p>Christchurch tattoo work built around realism, detail, texture, and longevity.</p>
+            <p>Christchurch black and grey tattoo work built around realism, depth, and longevity.</p>
           </div>
           <div className="grid-3">
             {specialties.map((item, index) => (
@@ -185,11 +185,11 @@ export default function HomePage() {
         <div className="container">
           <div className="section-title section-title-row" data-scroll>
             <div>
-              <span className="eyebrow">Latest from Gia</span>
-              <h2>Recent black & grey tattoos, blackwork, micro realism, and animal detail.</h2>
+              <span className="eyebrow">Latest from Max</span>
+              <h2>Recent black and grey realism tattoos, large-scale work, portraits, and custom designs.</h2>
             </div>
             <a
-              href="https://www.instagram.com/gia.tattooz?igsh=dms0MDRqNWowc25y"
+              href="https://www.instagram.com/max.tatz/"
               target="_blank"
               rel="noreferrer noopener"
               className="text-link"
@@ -243,21 +243,20 @@ export default function HomePage() {
         <div className="container">
           <div className="about-box" data-scroll>
             <figure className="artist-portrait">
-              <img src="/artist/gia-main-portrait.jpg" alt="Gia tattooing at Astoria Ink" />
+              <img src="/max-work/portrait-realism.jpg" alt="Black and grey realism tattoo by Max at Astoria Ink" />
             </figure>
             <div className="artist-story">
-              <span className="eyebrow">About Gia</span>
+              <span className="eyebrow">About Max</span>
               <p className="quote">
-                “Every tattoo is approached with patience, care, and a strong focus on quality.”
+                “Large realism tattoos need strong planning, contrast, and clean execution.”
               </p>
               <p>
-                Gia is a Christchurch tattoo artist at Astoria Ink with a focus on black
-                and grey tattoos, micro realism, blackwork, and animal tattoo
-                concepts. Her work suits clients looking for soft realism, pet-inspired
-                tattoos, wildlife ideas, and small detailed pieces that need careful
-                placement, contrast, and longevity.
+                Max is a Christchurch tattoo artist at Astoria Ink specialising in black
+                and grey realism. His work is suited to clients looking for large-scale
+                custom tattoos, portraits, wildlife, nature concepts, dark realism, and
+                detailed designs that need strong composition, depth, and clarity.
               </p>
-              <h3>What she brings</h3>
+              <h3>What he brings</h3>
               <ul className="list">
                 {artistHighlights.map((item) => (
                   <li key={item}>{item}</li>
@@ -273,7 +272,7 @@ export default function HomePage() {
           <div className="supply-banner" data-scroll>
             <div className="supply-copy">
               <span className="eyebrow">Studio supplies</span>
-              <h2>Professional brands Gia works with.</h2>
+              <h2>Professional brands Max works with.</h2>
             </div>
             <div className="brand-marquee" aria-label="Professional supply brands">
               <div className="brand-track">
@@ -300,7 +299,7 @@ export default function HomePage() {
           <div className="location-card" data-scroll>
             <div>
               <span className="eyebrow">Christchurch studio</span>
-              <h2>Gia tattoos from Astoria Ink.</h2>
+              <h2>Max tattoos from Astoria Ink.</h2>
               <p>
                 The SQ, Level 2, 270 St Asaph Street, Christchurch Central 8011.
               </p>

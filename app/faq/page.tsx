@@ -2,75 +2,75 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import SiteShell from '../components/site-shell';
 
-const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://gia-tattoo-site.vercel.app').replace(/\/$/, '');
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://max-tattoo-site.vercel.app').replace(/\/$/, '');
 
 const faqs = [
   {
-    question: 'Does Gia do black and grey tattoos in Christchurch?',
+    question: 'Does Max do black and grey realism tattoos in Christchurch?',
     answer:
-      'Yes. Gia tattoos from Astoria Ink in Christchurch and focuses on soft black and grey work, micro realism, blackwork, and carefully shaded realistic pieces.',
+      'Yes. Max tattoos from Astoria Ink in Christchurch and specialises in black and grey realism with strong shading, contrast, depth, and clean execution.',
   },
   {
-    question: 'Does Gia do animal tattoos?',
+    question: 'Does Max take on large-scale tattoo pieces?',
     answer:
-      'Yes. Animal tattoo concepts are a strong fit for Gia’s black and grey realism style, including wildlife ideas, pet-inspired tattoos, and smaller animal pieces that need fine detail and soft shading.',
+      'Yes. Large-scale custom tattoos are a strong fit for Max, especially pieces that need careful composition, body flow, contrast, and long-term clarity.',
   },
   {
-    question: 'Can Gia tattoo pet-inspired designs or pet portraits?',
+    question: 'What styles does Max specialise in?',
     answer:
-      'Gia can work with pet-inspired tattoo ideas and reference photos. Clear, well-lit images are best because they help capture the animal’s expression, markings, fur direction, and overall character.',
+      'Max focuses on black and grey realism, large-scale custom tattoos, portrait realism, wildlife tattoos, nature concepts, dark realism, and detailed custom designs.',
   },
   {
-    question: 'What styles does Gia specialise in?',
+    question: 'Can Max do portraits, animals, or wildlife tattoos?',
     answer:
-      'Gia’s main styles are black and grey tattoos, micro realism, blackwork, delicate lettering, and animal tattoo concepts. Her work is suited to clients wanting detail, softness, contrast, and a considered design.',
+      'Yes. Max works with portrait, animal, wildlife, and nature-based realism concepts. Clear reference images help with expression, texture, lighting, and accurate detail.',
   },
   {
-    question: 'Is micro realism good for animal tattoos?',
+    question: 'Is black and grey realism good for custom designs?',
     answer:
-      'Micro realism can work well for smaller animal tattoos, but the design needs enough room for important details like eyes, fur texture, shadows, and contrast. Gia can help decide what size will age best.',
+      'Black and grey realism works well for custom designs that need depth, mood, and strong contrast. Max can help shape the idea so it suits the placement and ages clearly.',
   },
   {
-    question: 'How big should a black and grey animal tattoo be?',
+    question: 'How big should a realism tattoo be?',
     answer:
-      'The right size depends on the animal, placement, and level of detail. Pet portraits, blackwork animals, and realistic wildlife tattoos usually need enough space for shading, contrast, and key features to stay clear over time.',
+      'The right size depends on the subject, placement, and level of detail. Portraits, animals, skulls, and large custom realism pieces usually need enough room for shading and key details to stay readable.',
   },
   {
-    question: 'What reference photos should I send for an animal tattoo?',
+    question: 'What reference images should I send Max?',
     answer:
-      'Send clear photos in natural light, ideally from a few angles. For pet-inspired tattoos, include close-up images of the face, markings, and expression, plus any notes about what you want the tattoo to feel like.',
+      'Send clear images with good lighting, plus any examples of mood, composition, or detail you like. For large-scale realism, include notes on placement, size, and any existing tattoos nearby.',
   },
   {
-    question: 'Where is Gia based?',
+    question: 'Where is Max based?',
     answer:
-      'Gia tattoos from Astoria Ink in Christchurch Central. The studio is at The SQ, Level 2, 270 St Asaph Street, Christchurch 8011.',
+      'Max tattoos from Astoria Ink in Christchurch Central. The studio is at The SQ, Level 2, 270 St Asaph Street, Christchurch 8011.',
   },
   {
-    question: 'How do I book a tattoo with Gia?',
+    question: 'How do I book a tattoo with Max?',
     answer:
       'Use the tattoo booking form and include your idea, placement, approximate size, preferred style, timing, contact details, reference notes, and reference images. Astoria Ink can then review the request and reply.',
   },
   {
-    question: 'How much does a tattoo with Gia cost?',
+    question: 'How much does a tattoo with Max cost?',
     answer:
-      'Gia’s minimum tattoo price is $150. Final pricing depends on size, placement, detail, style, and appointment time, so detailed pieces are best quoted after Gia can review the idea and references.',
+      'Pricing depends on size, placement, detail, style, and appointment time. Large-scale black and grey realism pieces are best quoted after Max can review the idea, placement, and references.',
   },
   {
-    question: 'Can Gia help refine my tattoo idea?',
+    question: 'Can Max help refine my tattoo idea?',
     answer:
-      'Yes. Gia works with clients to shape a tattoo idea into a design that suits the body, placement, size, contrast, and long-term clarity, especially for detailed black and grey or micro realism work.',
+      'Yes. Max works with clients to shape custom tattoo ideas into designs with strong composition, flow, depth, and long-term clarity.',
   },
   {
     question: 'What should I include in the booking form?',
     answer:
-      'Include your name, email, phone number, tattoo placement, approximate size, style, timing, description of the idea, and reference notes. For animal tattoos, reference photos are especially helpful.',
+      'Include your name, email, phone number, tattoo placement, approximate size, style, timing, description of the idea, and reference notes. For realism tattoos, clear reference images are especially important.',
   },
 ];
 
 export const metadata: Metadata = {
-  title: 'Gia Tattoo FAQ | Black & Grey, Blackwork & Micro Realism',
+  title: 'Max Tattoo FAQ | Black & Grey Realism Christchurch',
   description:
-    'FAQ for booking with Gia at Astoria Ink Christchurch, including black and grey tattoos, blackwork, animal tattoos, pet-inspired designs, micro realism, reference photos, sizing, and booking.',
+    'FAQ for booking with Max at Astoria Ink Christchurch, including black and grey realism tattoos, large-scale custom work, portraits, wildlife tattoos, reference images, sizing, and booking.',
   alternates: {
     canonical: '/faq',
   },
@@ -82,12 +82,12 @@ export default function FaqPage() {
     '@type': 'FAQPage',
     '@id': `${siteUrl}/faq#faq`,
     url: `${siteUrl}/faq`,
-    name: 'Gia Tattoo FAQ',
+    name: 'Max Tattoo FAQ',
     isPartOf: {
       '@id': `${siteUrl}/#website`,
     },
     about: {
-      '@id': `${siteUrl}/#gia`,
+      '@id': `${siteUrl}/#max`,
     },
     mainEntity: faqs.map((faq) => ({
       '@type': 'Question',
@@ -108,11 +108,11 @@ export default function FaqPage() {
       <section className="hero faq-hero">
         <div className="container">
           <div className="hero-card faq-intro">
-            <span className="eyebrow">Gia tattoo FAQ</span>
+            <span className="eyebrow">Max tattoo FAQ</span>
             <h1>Tattoo questions, answered.</h1>
             <p>
-              Answers for clients booking black and grey tattoos, animal tattoo ideas,
-              pet-inspired pieces, and micro realism with Gia at Astoria Ink Christchurch.
+              Answers for clients booking black and grey realism, large-scale custom
+              tattoos, portraits, wildlife, and dark realism with Max at Astoria Ink Christchurch.
             </p>
             <div className="hero-actions">
               <Link href="/book-now" className="btn btn-primary">
