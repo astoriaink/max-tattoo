@@ -4,7 +4,7 @@ import './globals.css';
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://max-tattoo-site.vercel.app').replace(/\/$/, '');
 const astoriaInkUrl = 'https://www.astoriaink.co.nz/';
 const maxInstagramUrl = 'https://www.instagram.com/max.tatz/';
-const maxTikTokUrl = 'https://www.tiktok.com/@max.tatz';
+const maxTikTokUrl = 'https://www.tiktok.com/@max.drummond57';
 const studioAddress = {
   '@type': 'PostalAddress',
   streetAddress: 'The SQ, Level 2, 270 St Asaph Street',
