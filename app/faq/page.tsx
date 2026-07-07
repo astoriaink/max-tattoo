@@ -43,7 +43,7 @@ const faqs = [
   {
     question: 'Where is Max based?',
     answer:
-      'maxtatz is based at Astoria Ink in Christchurch Central. The studio is at The SQ, Level 2, 270 St Asaph Street, Christchurch 8011.',
+      'Maxtatz is based at Astoria Ink in Christchurch Central. The studio is at The SQ, Level 2, 270 St Asaph Street, Christchurch 8011.',
   },
   {
     question: 'How do I book a tattoo with Max?',
@@ -68,7 +68,7 @@ const faqs = [
 ];
 
 export const metadata: Metadata = {
-  title: 'maxtatz FAQ | Black & Grey Realism Christchurch',
+  title: 'Maxtatz FAQ | Black & Grey Realism Christchurch',
   description:
     'FAQ for booking with Max at Astoria Ink Christchurch, including black and grey realism tattoos, large-scale custom work, portraits, wildlife tattoos, reference images, sizing, and booking.',
   alternates: {
@@ -82,7 +82,7 @@ export default function FaqPage() {
     '@type': 'FAQPage',
     '@id': `${siteUrl}/faq#faq`,
     url: `${siteUrl}/faq`,
-    name: 'maxtatz FAQ',
+    name: 'Maxtatz FAQ',
     isPartOf: {
       '@id': `${siteUrl}/#website`,
     },

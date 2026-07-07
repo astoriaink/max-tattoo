@@ -299,7 +299,7 @@ export default function HomePage() {
           <div className="location-card" data-scroll>
             <div>
               <span className="eyebrow">Christchurch studio</span>
-              <h2>maxtatz at Astoria Ink.</h2>
+              <h2>Maxtatz at Astoria Ink.</h2>
               <p>
                 The SQ, Level 2, 270 St Asaph Street, Christchurch Central 8011.
               </p>

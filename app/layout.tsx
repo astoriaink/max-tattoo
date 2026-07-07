@@ -16,15 +16,15 @@ const studioAddress = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'maxtatz | Christchurch Black & Grey Realism Tattoo Artist',
-    template: '%s | maxtatz',
+    default: 'Maxtatz | Christchurch Black & Grey Realism Tattoo Artist',
+    template: '%s | Maxtatz',
   },
   description:
     'Max is a Christchurch tattoo artist at Astoria Ink specialising in black and grey realism, large-scale custom tattoos, portraits, wildlife, dark realism, and detailed custom designs.',
   keywords: [
     'Astoria Ink',
     'Max tattoo artist Christchurch',
-    'maxtatz Christchurch',
+    'Maxtatz Christchurch',
     'tattoo artist Christchurch',
     'tattoo chch',
     'Christchurch tattoo artist',
@@ -49,16 +49,16 @@ export const metadata: Metadata = {
     apple: '/favicon.svg',
   },
   openGraph: {
-    title: 'maxtatz | Christchurch Black & Grey Realism Tattoo Artist',
+    title: 'Maxtatz | Christchurch Black & Grey Realism Tattoo Artist',
     description:
       'Black and grey realism, large-scale custom tattoos, portraits, wildlife, and dark realism by Max at Astoria Ink in Christchurch.',
     type: 'website',
     url: siteUrl,
-    siteName: 'maxtatz',
+    siteName: 'Maxtatz',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'maxtatz | Christchurch Black & Grey Realism Tattoo Artist',
+    title: 'Maxtatz | Christchurch Black & Grey Realism Tattoo Artist',
     description:
       'Black and grey realism, large-scale custom tattoos, portraits, wildlife, and dark realism by Max at Astoria Ink in Christchurch.',
   },
@@ -76,7 +76,7 @@ const structuredData = {
     {
       '@type': 'WebSite',
       '@id': `${siteUrl}/#website`,
-      name: 'maxtatz',
+      name: 'Maxtatz',
       url: siteUrl,
       inLanguage: 'en-NZ',
       description:
