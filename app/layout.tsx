@@ -90,7 +90,7 @@ const structuredData = {
       '@id': `${siteUrl}/#max`,
       name: 'Max',
       url: siteUrl,
-      image: `${siteUrl}/max-work/portrait-realism.jpg`,
+      image: `${siteUrl}/artist/max-main-portrait.jpg`,
       jobTitle: 'Tattoo Artist',
       worksFor: {
         '@id': `${astoriaInkUrl}#tattoo-parlor`,

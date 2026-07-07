@@ -243,7 +243,7 @@ export default function HomePage() {
         <div className="container">
           <div className="about-box" data-scroll>
             <figure className="artist-portrait">
-              <img src="/max-work/portrait-realism.jpg" alt="Black and grey realism tattoo by Max at Astoria Ink" />
+              <img src="/artist/max-main-portrait.jpg" alt="Max tattooing at Astoria Ink" />
             </figure>
             <div className="artist-story">
               <span className="eyebrow">About Max</span>
