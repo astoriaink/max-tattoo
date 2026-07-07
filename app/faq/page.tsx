@@ -68,7 +68,7 @@ const faqs = [
 ];
 
 export const metadata: Metadata = {
-  title: 'Max Tattoo FAQ | Black & Grey Realism Christchurch',
+  title: 'MaxTatz FAQ | Black & Grey Realism Christchurch',
   description:
     'FAQ for booking with Max at Astoria Ink Christchurch, including black and grey realism tattoos, large-scale custom work, portraits, wildlife tattoos, reference images, sizing, and booking.',
   alternates: {
@@ -82,7 +82,7 @@ export default function FaqPage() {
     '@type': 'FAQPage',
     '@id': `${siteUrl}/faq#faq`,
     url: `${siteUrl}/faq`,
-    name: 'Max Tattoo FAQ',
+    name: 'MaxTatz FAQ',
     isPartOf: {
       '@id': `${siteUrl}/#website`,
     },
