@@ -8,7 +8,7 @@ const faqs = [
   {
     question: 'Does Max do black and grey realism tattoos in Christchurch?',
     answer:
-      'Yes. Max tattoos from Astoria Ink in Christchurch and specialises in black and grey realism with strong shading, contrast, depth, and clean execution.',
+      'Yes. Max works from Astoria Ink in Christchurch and specialises in black and grey realism with strong shading, contrast, depth, and clean execution.',
   },
   {
     question: 'Does Max take on large-scale tattoo pieces?',
@@ -43,7 +43,7 @@ const faqs = [
   {
     question: 'Where is Max based?',
     answer:
-      'Max tattoos from Astoria Ink in Christchurch Central. The studio is at The SQ, Level 2, 270 St Asaph Street, Christchurch 8011.',
+      'MaxTatz is based at Astoria Ink in Christchurch Central. The studio is at The SQ, Level 2, 270 St Asaph Street, Christchurch 8011.',
   },
   {
     question: 'How do I book a tattoo with Max?',
