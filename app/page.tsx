@@ -52,16 +52,16 @@ const latestWork = [
 
 const processSteps = [
   {
-    title: 'Consultation',
-    text: 'Share your idea, placement, size, references, and any meaning behind the piece.',
+    title: 'Concept & consult',
+    text: 'Share the subject, placement, size, references, and mood. A consult can be arranged if the piece needs more planning.',
   },
   {
-    title: 'Design',
-    text: 'Max shapes the direction into a tattoo-ready concept with composition and longevity in mind.',
+    title: 'Composition planning',
+    text: 'Max reviews how the idea will sit on the body, how much space the detail needs, and what will hold clearly over time.',
   },
   {
-    title: 'Appointment',
-    text: 'Your piece is tattooed at Astoria Ink with a calm, precise, and considered process.',
+    title: 'Tattoo session',
+    text: 'Your piece is tattooed at Astoria Ink with a focus on contrast, depth, clean execution, and long-term readability.',
   },
 ];
 
@@ -220,7 +220,7 @@ export default function HomePage() {
         <div className="container">
           <div className="section-title" data-scroll>
             <span className="eyebrow">Booking process</span>
-            <h2>Simple, collaborative, and considered.</h2>
+            <h2>Planned around scale, detail, and placement.</h2>
           </div>
           <div className="process-grid">
             {processSteps.map((step, index) => (
